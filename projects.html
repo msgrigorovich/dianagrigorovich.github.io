@@ -6,10 +6,10 @@
   <title>Projects — Diana Grigorovich</title>
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="preload" as="image" href="/assets/images/portraits/albert-einstein-2015.webp" fetchpriority="high">
-  <link rel="stylesheet" href="/assets/css/style.css?v=20260905-qalab-mobile56" />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.min.css?v=a1afe1a8ca" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Press+Start+2P&family=Source+Code+Pro&display=swap" rel="stylesheet">
 
 </head>
 <body class="projects-page">
@@ -53,13 +53,13 @@
         </div>
         <p class="projects-note">The first things I ever made seriously were graphite portraits. This section begins there.</p>
         <a class="qa-repository-link" href="https://github.com/msgrigorovich/Art#----art" target="_blank" rel="noreferrer">
-          <img src="/github_icon.png" alt="" class="qa-repository-icon"><span>View repository</span><span aria-hidden="true">↗</span>
+          <img src="/github_icon.png" width="512" height="512" alt="" class="qa-repository-icon"><span>View repository</span><span aria-hidden="true">↗</span>
         </a>
       </div>
 
       <div class="portrait-stage">
         <div class="portrait-paper" id="portraitViewer">
-          <img id="portraitMainImage" src="/assets/images/portraits/albert-einstein-2015.webp" alt="Graphite portrait of Albert Einstein" draggable="false" decoding="async" fetchpriority="high">
+          <img id="portraitMainImage" src="/assets/images/portraits/albert-einstein-2015.webp" width="1086" height="1448" alt="Graphite portrait of Albert Einstein" draggable="false" decoding="async" fetchpriority="high">
           <div class="portrait-lens" id="portraitLens" aria-hidden="true"></div>
           <button type="button" class="portrait-open" id="portraitOpen" aria-label="Open Albert Einstein portrait in full view">
             <span>Open full</span><span aria-hidden="true">↗</span>
@@ -75,16 +75,16 @@
         <p>Archive · 04</p>
         <div class="portrait-thumbs">
           <button type="button" class="portrait-thumb active" data-portrait-index="0" aria-label="Show Albert Einstein, 2015">
-            <img src="/assets/images/portraits/thumbs/albert-einstein-2015.webp" alt="" draggable="false" decoding="async"><span>01</span>
+            <img src="/assets/images/portraits/thumbs/albert-einstein-2015.webp" width="255" height="340" alt="" draggable="false" decoding="async"><span>01</span>
           </button>
           <button type="button" class="portrait-thumb" data-portrait-index="1" aria-label="Show Robert Pattinson, 2016">
-            <img src="/assets/images/portraits/thumbs/robert-pattinson-2016.webp" alt="" draggable="false" decoding="async"><span>02</span>
+            <img src="/assets/images/portraits/thumbs/robert-pattinson-2016.webp" width="260" height="325" alt="" draggable="false" decoding="async"><span>02</span>
           </button>
           <button type="button" class="portrait-thumb" data-portrait-index="2" aria-label="Show Colton Haynes, 2018">
-            <img src="/assets/images/portraits/thumbs/colton-haynes-2018.webp" alt="" draggable="false" decoding="async"><span>03</span>
+            <img src="/assets/images/portraits/thumbs/colton-haynes-2018.webp" width="260" height="325" alt="" draggable="false" decoding="async"><span>03</span>
           </button>
           <button type="button" class="portrait-thumb" data-portrait-index="3" aria-label="Show Daria Ivanova, 2022">
-            <img src="/assets/images/portraits/thumbs/daria-ivanova-2022.webp" alt="" draggable="false" decoding="async"><span>04</span>
+            <img src="/assets/images/portraits/thumbs/daria-ivanova-2022.webp" width="260" height="325" alt="" draggable="false" decoding="async"><span>04</span>
           </button>
         </div>
         <p class="portrait-archive-note">Graphite on paper<br>Selected portraits, 2015—2022</p>
@@ -117,7 +117,7 @@
         </div>
         <p class="projects-note" id="qaProjectNote">An analytical-chemistry mindset translated into data-driven QA: controlled conditions, repeatable validation, measurable evidence and preventive regression detection.</p>
         <a class="qa-repository-link" id="qaProjectRepository" href="https://github.com/msgrigorovich/qalab#qalab" target="_blank" rel="noreferrer">
-          <img src="/github_icon.png" alt="" class="qa-repository-icon"><span>View repository</span><span aria-hidden="true">↗</span>
+          <img src="/github_icon.png" width="512" height="512" alt="" class="qa-repository-icon"><span>View repository</span><span aria-hidden="true">↗</span>
         </a>
       </div>
 
@@ -304,7 +304,7 @@ ORDER BY created_at DESC;</code></pre>
             <p>Functional checks may produce the expected result, but that does not guarantee that behavioral checks will do the same. In other words, testing a feature cannot—and should not—end with a binary true/false or passed/failed result. What happens afterward is just as important.</p>
           </div>
           <figure class="qalab-hero-visual">
-            <img src="/assets/images/qalab/laboratory-viewport.jpg" alt="Unreal Engine laboratory prototype with the player character at the reaction station">
+            <img src="/assets/images/qalab/laboratory-viewport.jpg" width="1920" height="1080" alt="Unreal Engine laboratory prototype with the player character at the reaction station">
             <figcaption>Actual Unreal Engine prototype</figcaption>
           </figure>
         </section>
@@ -373,7 +373,7 @@ ORDER BY created_at DESC;</code></pre>
         <header><div><p>Guided simulation · fictional laboratory model</p><h3>A playable reaction, frame by frame</h3></div><b id="qalabSimState">01 · Configure</b><button type="button" class="qalab-panel-close" id="qalabSimulationClose" aria-label="Close">×</button></header>
         <div class="qalab-sim-objective"><span>Objective</span><strong>Yield ≥ 90%</strong><i>while</i><strong>Peak temperature &lt; 70°C</strong></div>
         <figure class="qalab-sim-world">
-          <img src="/assets/images/qalab/laboratory-viewport.jpg" alt="Monochrome Unreal Engine laboratory with a third-person character facing the reaction station">
+          <img src="/assets/images/qalab/laboratory-viewport.jpg" width="1920" height="1080" alt="Monochrome Unreal Engine laboratory with a third-person character facing the reaction station">
           <figcaption>Actual Unreal Engine prototype · laboratory viewport</figcaption>
           <div class="qalab-world-station"><span>Shared gameplay station</span><i></i></div>
           <div class="qalab-world-reaction" aria-hidden="true"><div></div><b id="qalabSimProgress">0%</b><small>Running</small></div>
@@ -465,7 +465,7 @@ ORDER BY created_at DESC;</code></pre>
         </aside>
         <div class="portrait-modal-image" id="portraitModalStage">
           <div class="portrait-modal-paper" id="portraitModalPaper">
-            <img id="portraitModalImage" src="/assets/images/portraits/albert-einstein-2015.webp" alt="Graphite portrait of Albert Einstein" decoding="async">
+            <img id="portraitModalImage" src="/assets/images/portraits/albert-einstein-2015.webp" width="1086" height="1448" alt="Graphite portrait of Albert Einstein" decoding="async">
             <canvas id="portraitDrawCanvas" aria-label="Drawing layer"></canvas>
             <div class="portrait-highlight-overlay" id="portraitHighlightOverlay" aria-hidden="true"></div>
             <canvas class="portrait-modal-lens" id="portraitModalLens" aria-hidden="true"></canvas>
@@ -490,10 +490,10 @@ ORDER BY created_at DESC;</code></pre>
         <p><strong>Follow Me</strong></p>
         <div class="icons">
           <a href="https://www.linkedin.com/in/diana-grigorovich/" target="_blank">
-            <img src="/linkedin_icon.png" alt="LinkedIn" class="social-icon">
+            <img src="/linkedin_icon.png" width="512" height="512" alt="LinkedIn" class="social-icon">
           </a>
           <a href="https://github.com/msgrigorovich" target="_blank">
-            <img src="/github_icon.png" alt="GitHub" class="social-icon github-icon">
+            <img src="/github_icon.png" width="512" height="512" alt="GitHub" class="social-icon github-icon">
           </a>
         </div>
       </div>
@@ -524,11 +524,11 @@ ORDER BY created_at DESC;</code></pre>
 <canvas class="cursor-trail"></canvas>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="/assets/vendor/gsap.min.js?v=efc85c7eb1"></script>
 
-<script src="/assets/js/main.js?v=20260827-performance1"></script>
-<script src="/assets/js/projects.js?v=20260905-analytics-cover55"></script>
-<script src="/assets/js/analytics.js"></script>
+<script src="/assets/js/main.min.js?v=17efc11c58"></script>
+<script src="/assets/js/projects.min.js?v=ac9db78eab"></script>
+<script src="/assets/js/analytics.min.js?v=ef7214dff7"></script>
 
 </body>
 </html>

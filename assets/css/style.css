@@ -684,7 +684,7 @@ body.contact-credit-open .cursor-trail {
 @keyframes qalab-ident-screen { 0%{opacity:0} 8%,86%{opacity:1} 100%{opacity:0;visibility:hidden} }
 .qalab-ident-mark { display:flex; align-items:center; justify-content:center; gap:.015em; font:800 clamp(4.8rem,10vw,9rem)/.82 'Source Code Pro',monospace; letter-spacing:-.13em; transform-origin:center; }
 .qalab-ident-mark span { display:block; }
-.qalab-ident-mark i { display:block; width:.11em; height:.74em; margin:0 .08em 0 .12em; border-radius:999px; background:currentColor; }
+.qalab-ident-mark i { display:block; width:.07em; height:.74em; margin:0 .1em 0 .14em; border-radius:0; background:currentColor; }
 .qalab-ident.is-active .qalab-ident-mark { animation:qalab-mark-turn 2.08s .18s cubic-bezier(.65,0,.35,1) both; }
 @keyframes qalab-mark-turn { 0%,18%{transform:rotate(0deg);filter:blur(0)} 42%,61%{transform:rotate(180deg);filter:blur(0)} 46%{filter:blur(1.5px)} 86%,100%{transform:rotate(360deg);filter:blur(0)} }
 .qalab-ident p { margin:0; font:600 .76rem 'Source Code Pro',monospace; letter-spacing:.28em; text-transform:uppercase; opacity:0; }

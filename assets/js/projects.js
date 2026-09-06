@@ -1576,6 +1576,11 @@ function rememberQalabIdentShown() {
   catch { /* Storage can be unavailable in privacy modes. */ }
 }
 
+function forgetQalabIdentShown() {
+  try { sessionStorage.removeItem('qalab-ident-shown-v1'); }
+  catch { /* Storage can be unavailable in privacy modes. */ }
+}
+
 function rememberQaTourCompletion() {
   try { sessionStorage.setItem('qa-guided-tour-v1', 'complete'); }
   catch { /* Storage can be unavailable in privacy modes. */ }
@@ -2620,6 +2625,7 @@ qalabModal.addEventListener('cancel', event => {
 });
 qalabModal.addEventListener('close', () => {
   unlockPageScroll();
+  forgetQalabIdentShown();
   qaCursorElements.forEach(element => document.body.appendChild(element));
 });
 qaCaseClose.addEventListener('click', closeQaCaseStudy);

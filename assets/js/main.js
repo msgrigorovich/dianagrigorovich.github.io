@@ -519,6 +519,29 @@ let mouseX = 0, mouseY = 0;
 let outlineX = 0, outlineY = 0;
 let mouseInitialized = false;
 let isHoveringClickable = false;
+let outlineTickerActive = false;
+
+function updateCursorOutline() {
+  if (!mouseInitialized) return;
+  const speed = isHoveringClickable ? 0.18 : 0.12;
+  outlineX += (mouseX - outlineX) * speed;
+  outlineY += (mouseY - outlineY) * speed;
+  gsap.set(cursorOutline, { x: outlineX, y: outlineY });
+
+  if (Math.abs(mouseX - outlineX) < 0.05 && Math.abs(mouseY - outlineY) < 0.05) {
+    outlineX = mouseX;
+    outlineY = mouseY;
+    gsap.set(cursorOutline, { x: outlineX, y: outlineY });
+    gsap.ticker.remove(updateCursorOutline);
+    outlineTickerActive = false;
+  }
+}
+
+function startCursorOutlineTicker() {
+  if (outlineTickerActive) return;
+  outlineTickerActive = true;
+  gsap.ticker.add(updateCursorOutline);
+}
 
 if (cursorDot && cursorOutline) {
   window.addEventListener('mousemove', e => {
@@ -534,6 +557,8 @@ if (cursorDot && cursorOutline) {
       mouseInitialized = true;
     }
 
+    startCursorOutlineTicker();
+
    
     gsap.to(cursorDot, {
       x: mouseX,
@@ -543,16 +568,6 @@ if (cursorDot && cursorOutline) {
     });
   });
 
-  gsap.ticker.add(() => {
-    if (!mouseInitialized) return;
-    const speed = isHoveringClickable ? 0.18 : 0.12;
-    outlineX += (mouseX - outlineX) * speed;
-    outlineY += (mouseY - outlineY) * speed;
-    gsap.set(cursorOutline, {
-      x: outlineX,
-      y: outlineY
-    });
-  });
 }
 
 document.querySelectorAll('a, button').forEach(el => {
@@ -640,6 +655,11 @@ const TRAIL_LIFETIME = 280;
 const TRAIL_FADE_DURATION = 180;
 const TRAIL_POINT_INTERVAL = 14;
 let lastTrailPointAt = 0;
+let trailFrame = 0;
+
+function requestTrailFrame() {
+  if (!trailFrame) trailFrame = requestAnimationFrame(drawTrail);
+}
 
 window.addEventListener('mousemove', (e) => {
   const now = performance.now();
@@ -659,6 +679,8 @@ window.addEventListener('mousemove', (e) => {
   if (trail.length > 2000) {
     trail.splice(0, trail.length - 2000);
   }
+
+  requestTrailFrame();
 });
 
 function drawTrail(now = performance.now()) {
@@ -679,10 +701,8 @@ function drawTrail(now = performance.now()) {
   });
 
   trail = trail.filter(p => now - p.createdAt < p.lifetime);
-  requestAnimationFrame(drawTrail);
+  trailFrame = trail.length ? requestAnimationFrame(drawTrail) : 0;
 }
-
-drawTrail();
 
 function animateProgressBar() {
   const container = document.querySelector('.progress-bar-fill');

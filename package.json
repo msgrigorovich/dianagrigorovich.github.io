@@ -1,0 +1,14 @@
+{
+  "name": "dianagrigorovich-portfolio",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-assets.mjs",
+    "check": "npm run build && npm run verify",
+    "verify": "node scripts/verify-site.mjs"
+  },
+  "devDependencies": {
+    "gsap": "^3.12.2",
+    "lightningcss": "^1.33.0",
+    "terser": "^5.51.2"
+  }
+}
